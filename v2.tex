@@ -6,11 +6,81 @@
      \end{center}
 \end{frame}
 
-\begin{frame}{Hood File}
+\begin{frame}{Die Idee}
+    Neuer keyXchange ...
+
+    \begin{itemize}
+        \item KeyXchange stellt Hood-File bereit
+        \item Knoten konfigurieren
+        \begin{itemize}
+            \item VPN
+            \item WLAN
+            \item IPv6 Netz
+        \end{itemize}
+        \item[$\rightarrow$] Unbeabsichtigte Hood-Verbindungen werden vermieden
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{Neuer keyXchange}
+\begin{frame}{Hood-File}
+    \begin{itemize}
+        \item Version
+        \item ULA Prefix
+        \item VPN Zugang: Protokoll, IP, Port, Key
+        \item Hood-Daten: 
+        \begin{itemize}
+            \item Name, AP-ESSID
+            \item BSSID, MESH\_ID, MESH\_ESSID
+            \item Mesh-Protocol (Batman-Adv)
+            \item 2.4 und 5 GHz Kanal, Bandbreite, Mesh\_Type
+            \item Upgrade URL, Zeit-Server
+            \item Zeit-Stempel
+            \item Standort der Hood
+        \end{itemize}
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{IPv6}
+\begin{frame}{Der Uplink Knoten}
+    keyXchange erreichbar
+
+    Download Hood-File
+
+    Konfigurieren
+
+    Fertig.. Prima..
+\end{frame}
+
+\begin{frame}{Der WiFi Mesh Knoten}
+    Kein keyXchange ..
+
+    Keine Nachbarn (ich kenne die WLAN Config nicht)
+
+    Woher Hood-File nehmen?
+
+    Suchen?
+\end{frame}
+
+\begin{frame}{Der Ethernet Mesh Knoten}
+    Kein keyXchange ..
+
+    Batman-Adv läuft ja schon, Prima..
+
+    WLAN-Settings? Woher nehmen?
+    
+    -> Hood-File vom Gateway laden
+
+    Shit: Uplink-Knoten ändert sich
+
+    Shit: Gateway und Uplink-Knoten sind unterschiedlich
+
+    Shit: Es gibt mehrere Nachbarn -> Hood verbunden..
+
+    Shit: Ich bin Ethernet Mesh Knoten und Uplink gleichzeitig -> ggfs Hood verbunden
+\end{frame}
+
+\begin{frame}{Config-AP am Uplink Knoten}
+    Zusätzlicher (hidden) AP am Knoten
+
+    Webserver
+
+    Stellt bestätigtes Hood-File zum Download bereit
 \end{frame}
