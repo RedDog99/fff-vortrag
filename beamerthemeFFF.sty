@@ -61,8 +61,9 @@
 %}
 
 % This configures the block Environment
-\setbeamercolor{block body}{bg=MainColor!8,fg=MainColor}
-\setbeamercolor{block title}{bg=MainColor!40,fg=black}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamercolor{block title}{bg=structure,fg=white}
+\setbeamercolor{block body}{bg=structure!10,fg=MainColor}
 
 % This makes the nice bubbles below the section entries
 \let\origsection\section
