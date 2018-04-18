@@ -12,15 +12,16 @@
             \item VPN Schlüsseltausch über zentrales Tool
             \begin{itemize}
                 \item Manuelle Zuweisung der VPN Server
-                \item Keine Anpassung an Firmware
-                \item[$\rightarrow$] Loop durch versehentliches Meshing
+                \item \sout{Keine Anpassung an Firmware}
+                \item \sout{Loop durch versehentliches Meshing}
             \end{itemize}
         \end{itemize}
         \item L3-Netz
         \begin{itemize}
             \item Kein Traffic Balancing zwischen VPN Server und Gateways
-            \item Keine Möglichkeit die L2 Netze per Richtfunk zu verbinden
+            \item \sout{Keine Möglichkeit die L2 Netze per Richtfunk zu verbinden}
         \end{itemize}
+        \item Komplexität zu hoch
 %        \item Monitoring
 %        \begin{itemize}
 %            \item Ein Alfred-Proxy für alle Hoods
@@ -36,96 +37,18 @@
     \begin{itemize}
         \item Dezentralisieren
         \begin{itemize}
-            \item Hood finden
-            \begin{itemize}
-                \item Zum richtigen VPN verbinden
-                \item WiFi Settings einstellen
-            \end{itemize}
-            \item Neue VPN Server eintragen
-            \item Neue Hoods anlegen
+            \item Knoten laden alle verfügbaren Hood-Files
+            \item Knoten wählt selbst die richtige Hood
         \end{itemize}
         \item Sicherheit?
         \begin{itemize}
-            \item Ausfälle
-            \item Manipulationen
+            \item Crypto auf den Hood-Files
+            \item Key-Files $\rightarrow$ Trust-Chain
         \end{itemize}
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Hood-Configs}
-    \begin{columns}
-    \column{0.45\textwidth}
-        \begin{block}{Hood Config}
-            \footnotesize
-            %[general]\\
-            %version=1\\[1ex]
-            [hood]\\
-            name=fuerth\\
-            bssid=ca:ff:ee:ba:be:00\\
-            protocol=batman-adv-v14\\
-            channel2=1\\
-            mode2=ht20+\\
-            type=802.11s\\
-            location=49.4814;10.966\\
-            noAutoConnect=true\\[1ex]
-            [network]\\
-            prefix=fdff:1::
-        \end{block}
-    \column{0.45\textwidth}
-        \begin{block}{Gateway Config}
-            \footnotesize
-            %[general]\\
-            %version=1\\[1ex]
-            [network]\\
-            hood=fuerth\\[1ex]
-            %ip4range=10.50.44.1-.46.255\\
-            %//ip6range=2001:xx:xx:xx/64\\[1ex]
-            [vpn]\\
-            protocol=fastd\\
-            address=vpn1.fff.community\\
-            port=10000\\
-            %key=$<$fastd-public-key$>$\\[1ex]
-        \end{block}
-        \begin{block}{Key File}
-            \footnotesize
-            [sign]\\
-            key=$<$public-key$>$\\
-        \end{block}
-    \end{columns}
-\end{frame}
 
-\begin{frame}{Hood-Configs verteilen}
-    \begin{itemize}
-        \item Download über HTTP Server
-            \begin{itemize}
-                \item Immer noch zentral
-                \begin{itemize}
-                    \item[$\rightarrow$] .. später mal ,,sync daemon''?
-                \end{itemize}
-            \end{itemize}
-        \item Gegen Überschreiben/Löschen absichern
-        \begin{itemize}
-            \item[$\rightarrow$] Synchronisation nur mit Signatur
-        \end{itemize}
-        \item Knoten ohne WAN / VPN
-        \begin{itemize}
-            \item Config Access-Point
-        \end{itemize}
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{L3 Richtfunk}
-    \center
-    \includegraphics[width=0.6\textwidth]{img/dia/l3richtfunk.pdf}
-\end{frame}
-
-\begin{frame}{L3 Richtfunk}
-    \begin{itemize}
-        \item Batman Netz = Normales Ethernet
-        \item OLSR gegen Unfug absichern $\rightarrow$ sOLSR (??)
-        \item Problem: Nur ein default Gateway pro Client
-        \begin{itemize}
-            \item[$\rightarrow$] Das Gateway vom Dach oder das hinter dem DSL?
-        \end{itemize}
-    \end{itemize}
+\begin{frame}{Freifunk V3}
+    ..
 \end{frame}
