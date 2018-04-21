@@ -1,54 +1,62 @@
-\section{Ausblick}
+\section{Zusammenfassung}
 \begin{frame}{}
     \begin{center}
-        Ausblick
+        Zusammenfassung
      \end{center}
 \end{frame}
 
-\begin{frame}{Aktuelle Probleme}
+\begin{frame}{Freifunk V1}
     \begin{itemize}
-        \item KeyXchange
+        \item Aktuelle (!) veraltete (!) Freifunk Firmware
         \begin{itemize}
             \item VPN Schlüsseltausch über zentrales Tool
-            \begin{itemize}
-                \item Manuelle Zuweisung der VPN Server
-                \item \sout{Keine Anpassung an Firmware}
-                \item \sout{Loop durch versehentliches Meshing}
-            \end{itemize}
+            \item Manuelle Zuweisung der VPN Server
+            \item Keine Anpassung an Firmware
+            \item[$\rightarrow$] Loop durch versehentliches Meshing
         \end{itemize}
-        \item L3-Netz
+        \item Einseitiges Peering (viel Ausnutzung)
         \begin{itemize}
-            \item Kein Traffic Balancing zwischen VPN Server und Gateways
-            \item \sout{Keine Möglichkeit die L2 Netze per Richtfunk zu verbinden}
+            \item[$\rightarrow$] Viele Router-Aufsteller
+            \item[$\rightarrow$] Zu wenig Vernetzung
         \end{itemize}
-        \item Komplexität zu hoch
-%        \item Monitoring
-%        \begin{itemize}
-%            \item Ein Alfred-Proxy für alle Hoods
-%        \end{itemize}
-%        \item Firmware-Build
-%        \begin{itemize}
-%            \item OpenWrt Packages
-%        \end{itemize}
     \end{itemize}
 \end{frame}
 
-\begin{frame}{KeyXchange}
+\begin{frame}{Freifunk V2}
     \begin{itemize}
-        \item Dezentralisieren
+        \item Zukünftige (?) Freifunk Firmware
         \begin{itemize}
-            \item Knoten laden alle verfügbaren Hood-Files
-            \item Knoten wählt selbst die richtige Hood
+            \item VPN Schlüsseltausch über zentrales Tool
+            \item Manuelle Zuweisung der VPN Server
+            \item Theoretisch keine Loops
+            \item[$\rightarrow$] Komplexität (viel) zu hoch
         \end{itemize}
-        \item Sicherheit?
+        \item Einseitiges Peering (viel Ausnutzung)
         \begin{itemize}
-            \item Crypto auf den Hood-Files
-            \item Key-Files $\rightarrow$ Trust-Chain
+            \item[$\rightarrow$] Viele Router-Aufsteller
+            \item[$\rightarrow$] Zu wenig Vernetzung
         \end{itemize}
     \end{itemize}
 \end{frame}
-
 
 \begin{frame}{Freifunk V3}
-    ..
+    \begin{itemize}
+        \item Zukünftige Freifunk Vernetzung
+        \begin{itemize}
+            \item Kein automatisches Peering
+            \item[$\rightarrow$] Weniger Router-Aufstellern
+        \end{itemize}
+        \item Kaum Doku
+        \item Manuelles Peering nötig
+        \begin{itemize}
+            \item Viel (soziale) Vernetzung
+            \item Wecken von Potential
+        \end{itemize}
+        \item Layer 3 Routing
+        \begin{itemize}
+            \item Sehr hohe Performance
+            \item Leichtes Debuggen
+            \item Standard Komponenten
+        \end{itemize}
+    \end{itemize}
 \end{frame}
