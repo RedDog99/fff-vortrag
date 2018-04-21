@@ -31,7 +31,7 @@
         \begin{itemize}
             \item Name, AP-ESSID
             \item BSSID, MESH\_ID, MESH\_ESSID
-            \item Mesh-Protocol (Batman-Adv)
+            \item Mesh-Protokoll (Batman-Adv)
             \item 2.4 und 5 GHz Kanal, Bandbreite, Mesh\_Type
             \item Upgrade URL, Zeit-Server
             \item Zeit-Stempel
@@ -55,44 +55,67 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Der WiFi Mesh Knoten}
-    Kein keyXchange ..
-
-    Keine Nachbarn (ich kenne die WLAN Config nicht)
-
-    Woher Hood-File nehmen?
-
-    Suchen?
+\begin{frame}{Mesh Knoten mit WLAN}
+    \begin{itemize}
+        \item Kein WAN: kein keyXchange erreichbar
+        \item Keine Nachbarn (Knoten kennt die WLAN/Mesh Config nicht)
+        \item Woher Hood-File nehmen?
+        \item Suchen?
+        \item[$\rightarrow$] Config-AP
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{Der Ethernet Mesh Knoten}
-    Kein keyXchange ..
-
-    Batman-Adv läuft ja schon, Prima..
-
-    WLAN-Settings? Woher nehmen?
-    
-    -> Hood-File vom Gateway laden
-
-    Shit: Uplink-Knoten ändert sich
-
-    Shit: Gateway und Uplink-Knoten sind unterschiedlich
-
-    Shit: Es gibt mehrere Nachbarn -> Hood verbunden..
-
-    Shit: Ich bin Ethernet Mesh Knoten und Uplink gleichzeitig -> ggfs Hood verbunden
+\begin{frame}{Config-AP}
+    \begin{itemize}
+        \item Zusätzlicher (hidden) AP am Knoten
+        \item Kleiner Webserver
+        \item Stellt Hood-File zum Download bereit
+        \item Mesh Knoten mit WLAN können Hood-File downloaden
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{Config-AP am Uplink Knoten}
-    Zusätzlicher (hidden) AP am Knoten
+\begin{frame}{Mesh Knoten mit Ethernet}
+    \begin{itemize}
+        \item Kein WAN: kein keyXchange erreichbar
+        \item Batman-Adv läuft ja schon, Prima...
+        \item WLAN-Settings? Woher nehmen?
+        \item[$\rightarrow$] Hood-File vom Gateway laden
+        \item[:(] Uplink-Knoten ändert sich
+        \item[:(] Gateway und Uplink-Knoten sind unterschiedlich
+        \item[:(] Es gibt mehrere Nachbarn: $\rightarrow$ Hood verbunden..
+        \item[:(] Mesh Knoten bekommt Uplink: $\rightarrow$ ggfs Hood verbunden
+    \end{itemize}
+\end{frame}
 
-    Webserver
-
-    Stellt bestätigtes Hood-File zum Download bereit
+\begin{frame}{Konstellationen}
+    \begin{itemize}
+        \item Knoten per Ethernet an Knoten per Ethernet an Uplink Knoten
+        \item Knoten per Ethernet an Knoten per WLAN an Uplink Knoten
+        \item Knoten per WLAN an Knoten per Ethernet an Uplink Knoten
+        \item Knoten per WLAN an Knoten per WLAN an Uplink Knoten
+        \item Mehrere Uplink Knoten
+        \item Knoten per Ethernet und WLAN an Uplink
+        \item Knoten mit 5 GHz und 2.4 GHz
+        \item ... viele mehr ...
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Sector-File}
-    Coole Sache
-
-    Zweck .. usw
+    \begin{itemize}
+        \item Ein Sector-File kann WLAN-Mesh Parameter überschreiben:
+        \begin{itemize}
+            \item WLAN Kanal
+            \item Typ
+            \item Mesh-ID
+            \item AP-ESSID
+        \end{itemize}
+        \item Sector-File wird über Config-AP verteilt
+        \begin{itemize}
+            \item[:(] Nicht auf Ethernet
+            \item[$\rightarrow$] Noch mehr Konstellationen
+        \end{itemize}
+    \end{itemize}
+    \vfill
+    \raggedleft
+    \only<2>{... Ich erspare euch das weitere}
 \end{frame}
