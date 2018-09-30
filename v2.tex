@@ -58,10 +58,25 @@
 \begin{frame}{Mesh Knoten mit WLAN}
     \begin{itemize}
         \item Kein WAN: kein keyXchange erreichbar
-        \item Keine Nachbarn (Knoten kennt die WLAN/Mesh Config nicht)
-        \item Woher Hood-File nehmen?
-        \item Suchen?
-        \item[$\rightarrow$] Config-AP
+        \item Noch keine Nachbarn (Knoten kennt die WLAN/Mesh Config nicht):
+        \begin{itemize}
+            \item Woher Hood-File nehmen? Suchen?
+            \item[$\rightarrow$] Config-AP
+        \end{itemize}
+        \item Hat schon Nachbarn (Knoten kennt die WLAN/Mesh Config):
+        \begin{itemize}
+            \item[$\rightarrow$] Hood-File vom Gateway laden
+        \end{itemize}
+        \item Nachbar-Knoten ändert sich (Keine WLAN/Mesh Verbindung mehr):
+        \begin{itemize}
+            \item[$\rightarrow$] Config-AP
+        \end{itemize}
+        \item Mesh Knoten bekommt Uplink und Hood ändert sich:
+        \begin{itemize}
+            \item[$\rightarrow$] Config-AP
+        \end{itemize}
+        \item[:)] Alle Nachbarn haben selbe WLAN/Mesh config: Hoods bleiben getrennt
+        \item[:(] Gateway und keyXchangeV2 können unterschiedliche Hood-Files haben
     \end{itemize}
 \end{frame}
 
