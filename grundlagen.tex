@@ -5,11 +5,6 @@
      \end{center}
 \end{frame}
 
-%\begin{frame}{Freifunk Knoten}
-%    \only<1>{\includegraphics[width=0.85\textwidth]{img/svg/anschluesse.pdf}}
-%    \only<2>{\includegraphics[width=0.85\textwidth]{img/svg/anschluesse_all.pdf}}
-%\end{frame}
-
 \begin{frame}{Ein typisches Freifunk Netz}
     \begin{itemize}
         \item Ein Batman-Adv Netz
@@ -39,7 +34,17 @@
     \includegraphics[width=\textwidth]{img/svg/freifunk_konzepte_alt.pdf}
 \end{frame}
 
-\begin{frame}{keyXchange}
+\begin{frame}{Freifunk Franken Netz}
+    \includegraphics[width=\textwidth]{img/svg/freifunk_konzepte.pdf}
+
+    \begin{itemize}
+        \item Mehrere Layer-2 Inseln (Hoods)
+        \item Verbindung per Layer-3
+        \item Dezentrale Gateways
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{keyXchange V1}
     \begin{itemize}
         \item \glqq{}Automatisches Peering\grqq{}
         \item VPN Endpunkt Vermittlung
@@ -56,33 +61,20 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Freifunk Franken Netz}
-    \includegraphics[width=\textwidth]{img/svg/freifunk_konzepte.pdf}
-
-    \begin{itemize}
-        \item Mehrere Layer-2 Inseln (Hoods)
-        \item Verbindung per Layer-3
-        \item Dezentrale Gateways
-    \end{itemize}
-\end{frame}
-
-
 \begin{frame}{Gateway}
     \begin{itemize}
         \item VPN Server: In jeder Hood gibt es mehrere davon
-        \begin{itemize}
-            \item Hoodzuweisung manuell im KeyXchange
-        \end{itemize}
         \item Internet: DNS / Gateway
         \begin{itemize}
             \item Adresszuweisung über DHCP (selten: slac)
             \item Anpassung nach Traffic Auslastung: Batman-Adv GW Selection
-            \item IPv4 NAT (oft übers Ausland) ins Internet
+            \item IPv4 NAT (manchmal übers Ausland) ins Internet
         \end{itemize}
-        \item Freifunk: VPN (GRE) / Routing zu anderen Gateways
+        \item Freifunk: VPN (GRE o. Wireguard) / Routing zu anderen Gateways
         \begin{itemize}
             \item Babel Routing
             \item Routing Metrik ohne Traffic/Bandbreite
+            \item Keine Security
         \end{itemize}
     \end{itemize}
 \end{frame}
