@@ -8,9 +8,16 @@
 
 \begin{frame}{Warum?}
     \begin{itemize}
-        \item \glqq{}Sofa-Knoten\grqq{} verstopfen das Netz, bringen wenig
+        \item \glqq{}Sofa-Knoten\grqq{} verstopfen das Netz, bringen wenig (nichts)
         \item Wenig Know-How bei Knoten-Aufsteller
+        \begin{itemize}
+            \item[$\rightarrow$] Bereitschaft zum lernen oft sehr gering
+            \item[$\rightarrow$] Community Gedanke verloren gegangen
+        \end{itemize}
         \item Freifunk $\neq$ gratis Hotspot
+        \begin{itemize}
+            \item[$\rightarrow$] Hotspots können an Freifunk angebunden werden, sind aber kein Freifunk
+        \end{itemize}
         \item Mehr Zusammenarbeit
         \begin{itemize}
             \item[$\rightarrow$] Weniger \glqq{}Sofa-Knoten\grqq{}
@@ -24,16 +31,22 @@
         \item \only<1>{Neuer keyXchange}
             \only<2>{Nein, quatsch! ;)}
             \only<3>{Kein keyXchange mehr}
+        \begin{itemize}
+            \item<3>[$\rightarrow$] Kein automatisches Peering mehr
+        \end{itemize}
         \item<3> Es gibt keine spezielle Freifunk Firmware mehr
-        \item<3> Kein automatisches Peering mehr
+        \begin{itemize}
+            \item Naktes OpenWRT, Hersteller-Firmware, etc
+        \end{itemize}
         \item<3> Dezentrale Gateways
-        \item<3> \glqq{}Mesh Wolken\grqq{} mit fertigen Komponenten
+        \item<3> Optionale \glqq{}Mesh Wolken\grqq{} mit fertigen Komponenten
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Wie?}
     \begin{columns}[T]
         \begin{column}{0.46\textwidth}
+            {\Large{}Freifunk}
             \begin{itemize}
                 \item Back to the roots
                 \item Nur ein Router mit
@@ -51,15 +64,18 @@
             \end{itemize}
         \end{column}
         \begin{column}{0.46\textwidth}
+            {\Large{}Anwendung}
             \begin{itemize}
                 \item Zugänge über
                 \begin{itemize}
                     \item Kabel-Netzwerk
                     \item Access-Points
                 \end{itemize}
-                \item Kein Batman-adv
+                \item Optional mit \glqq{}WLAN-Mesh\grqq{}
                 \begin{itemize}
-                    \item Google Wifi
+                    \item Batman-Adv
+                    \item WDS
+                    \item 802.11s
                     \item AVM Mesh
                     \item TP-Link Deco
                     \item Ubnt UniFi Mesh
@@ -81,13 +97,13 @@
     \only<3>{
         \includegraphics[width=0.96\textwidth]{img/dia/stpaul}
     }
-    \only<4>{
-        ~
-        \hfill
-        \includegraphics[height=0.86\textheight]{img/stpaul-kasten}
-        \hfill
-        \includegraphics[height=0.86\textheight]{img/stpaul-fenster}
-        \hfill
-        ~
-    }
+%    \only<4>{
+%        ~
+%        \hfill
+%        \includegraphics[height=0.86\textheight]{img/stpaul-kasten}
+%        \hfill
+%        \includegraphics[height=0.86\textheight]{img/stpaul-fenster}
+%        \hfill
+%        ~
+%    }
 \end{frame}
